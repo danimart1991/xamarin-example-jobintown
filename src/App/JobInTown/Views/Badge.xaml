@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView 
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:views="clr-namespace:JobInTown.Views"
+    x:Class="JobInTown.Views.Badge">
+
+    <ContentView.Content>
+        <Grid x:Name="ViewGrid">
+            <views:RoundedBox x:Name="ViewRoundedBox" VerticalOptions="Center"/>
+            <Label x:Name="ViewLabel" Text="{Binding Contract}" HorizontalOptions="Center" VerticalOptions="Center" TextColor="White"/>
+        </Grid>
+    </ContentView.Content>
+</ContentView>

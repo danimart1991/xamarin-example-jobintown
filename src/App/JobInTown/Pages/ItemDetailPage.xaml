@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<base:TabbedPageBase
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:base="clr-namespace:JobInTown.Pages.Base"
+    xmlns:viewModels="clr-namespace:JobInTown.ViewModels"
+    xmlns:views="clr-namespace:JobInTown.Views"
+    xmlns:controls="clr-namespace:JobInTown.Controls"
+    xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+    xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
+    xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"
+    xmlns:localization="clr-namespace:JobInTown.Extensions"
+    x:TypeArguments="viewModels:ItemDetailViewModel"
+    x:Class="JobInTown.Pages.ItemDetailPage"
+    Title="{localization:Translate ItemDetailPage_Page_Title}"
+    BarBackgroundColor="#DD9944"
+    BarTextColor="White">
+
+  <base:TabbedPageBase.ToolbarItems>
+    <controls:BindableToolbarItem Text="{localization:Translate ItemDetailPage_Delete_ToolBarItem_Text}" Command="{Binding DeleteJobCommand}" IsVisible="{Binding IsDeleteButtonVisible}">
+      <ToolbarItem.Icon>
+        <OnPlatform x:TypeArguments="FileImageSource" iOS="Icons/DeleteIcon.png" Android="ic_delete_forever_white_24dp.png" WinPhone="Assets/Icons/DeleteIcon.png" />
+      </ToolbarItem.Icon>
+    </controls:BindableToolbarItem>
+  </base:TabbedPageBase.ToolbarItems>
+
+  <ContentPage>
+    <ContentPage.Title>
+      <OnPlatform x:TypeArguments="x:String"
+                  iOS="{localization:Translate iOS_ItemDetailPage_Information_ContentPage_Title}"
+                  Android="{localization:Translate Android_ItemDetailPage_Information_ContentPage_Title}"
+                  WinPhone="{localization:Translate Windows_ItemDetailPage_Information_ContentPage_Title}"/>
+    </ContentPage.Title>
+    <ContentPage.Content>
+      <Grid>
+        <ScrollView>
+          <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand">
+            <Grid HeightRequest="200">
+              <ffimageloading:CachedImage HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
+                                          RetryCount="3" RetryDelay="250" Aspect="Fill" HeightRequest="200"
+                                          Source="{Binding ImageUrl}">
+                <ffimageloading:CachedImage.Transformations>
+                  <fftransformations:BlurredTransformation Radius="40"/>
+                </ffimageloading:CachedImage.Transformations>
+              </ffimageloading:CachedImage>
+              <ffimageloading:CachedImage
+                  RetryCount="3" RetryDelay="250" FadeAnimationEnabled="true"
+                  Source="{Binding ImageUrl}"/>
+              <Button
+                VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"
+                Command="{Binding ImageZoomCommand}" Opacity="0"/>
+            </Grid>
+            
+            <StackLayout Margin="16">
+              <StackLayout Orientation="Horizontal" Margin="0,8,0,0">
+                <views:Badge FontSize="Micro" Text="{Binding Contract, Converter={StaticResource EnumToDisplayNameAttribute}}" BackgroundColor="{Binding Contract, Converter={StaticResource ContractToColor}}"/>
+                <views:Badge FontSize="Micro" Text="{Binding Workday, Converter={StaticResource EnumToDisplayNameAttribute}}" BackgroundColor="{Binding Workday, Converter={StaticResource WorkDayToColor}}"/>
+              </StackLayout>
+              <Label Text="{Binding Title}" FontSize="28" TextColor="Black" FontAttributes="Bold"/>
+              <Label Text="{Binding Category, Converter={StaticResource EnumToDisplayNameAttribute}}"/>
+
+              <Label Text="{Binding PostedDate, Converter={StaticResource DateToPostedDate}}" />
+
+              <StackLayout Spacing="0">
+                <Label Text="{Binding Distance}"/>
+                <Label Text="{Binding MapAddress}" LineBreakMode="WordWrap"/>
+              </StackLayout>
+
+              <BoxView HeightRequest="1" BackgroundColor="LightGray" HorizontalOptions="FillAndExpand" Margin="0,20"/>
+              <Label Text="{Binding FullName}"/>
+              <Label Text="{Binding Description}" Margin="0,0,0,20"/>
+            </StackLayout>
+          </StackLayout>
+        </ScrollView>
+        
+        <Grid IsVisible="{Binding IsBusy}" BackgroundColor="#FFFFFF">
+          <ActivityIndicator IsRunning="True" Color="#DD9944" HeightRequest="200" VerticalOptions="Center"/>
+        </Grid>
+      </Grid>
+    </ContentPage.Content>
+  </ContentPage>
+  <ContentPage>
+    <ContentPage.Title>
+      <OnPlatform x:TypeArguments="x:String"
+                  iOS="{localization:Translate iOS_ItemDetailPage_Map_ContentPage_Title}"
+                  Android="{localization:Translate Android_ItemDetailPage_Map_ContentPage_Title}"
+                  WinPhone="{localization:Translate Windows_ItemDetailPage_Map_ContentPage_Title}"/>
+    </ContentPage.Title>
+    <Grid>
+      <maps:Map
+        x:Name="MyMap"
+        IsShowingUser="true"
+        MapType="Street"/>
+      
+      <Grid IsVisible="{Binding IsBusy}" BackgroundColor="#FFFFFF">
+        <ActivityIndicator IsRunning="True" Color="#DD9944" HeightRequest="200" VerticalOptions="Center"/>
+      </Grid>
+    </Grid>
+  </ContentPage>
+</base:TabbedPageBase>

@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<base:ContentPageBase
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:JobInTown"
+    xmlns:base="clr-namespace:JobInTown.Pages.Base"
+    xmlns:viewModels="clr-namespace:JobInTown.ViewModels"
+    xmlns:controls="clr-namespace:JobInTown.Controls"
+    xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+    xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
+    x:TypeArguments="viewModels:ImageDetailViewModel"
+    x:Class="JobInTown.Pages.ImageDetailPage">
+
+  <ContentPage.Content>
+    <Grid BackgroundColor="Black" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+      <controls:PinchToZoomContainer>
+        <controls:PinchToZoomContainer.Content>
+            <ffimageloading:CachedImage
+                  RetryCount="3" RetryDelay="250" FadeAnimationEnabled="true"
+                  Source="{Binding ImageUrl}"/>
+        </controls:PinchToZoomContainer.Content>
+      </controls:PinchToZoomContainer>
+    </Grid>
+  </ContentPage.Content>
+</base:ContentPageBase>

@@ -1,0 +1,435 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AddItemPage_Category_Label_Text" xml:space="preserve">
+    <value>Category</value>
+  </data>
+  <data name="AddItemPage_Contract_Label_Text" xml:space="preserve">
+    <value>Contract</value>
+  </data>
+  <data name="AddItemPage_Description_Label_Text" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="AddItemPage_Location_Label_Text" xml:space="preserve">
+    <value>Location</value>
+  </data>
+  <data name="AddItemPage_Page_Title" xml:space="preserve">
+    <value>Add new job</value>
+  </data>
+  <data name="AddItemPage_Save_ToolBarItem_Text" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="AddItemPage_Title_Label_Text" xml:space="preserve">
+    <value>Title</value>
+  </data>
+  <data name="AddItemPage_Workday_Label_Text" xml:space="preserve">
+    <value>Workday</value>
+  </data>
+  <data name="Android_ItemDetailPage_Information_ContentPage_Title" xml:space="preserve">
+    <value>INFORMATION</value>
+  </data>
+  <data name="Android_ItemDetailPage_Map_ContentPage_Title" xml:space="preserve">
+    <value>MAP</value>
+  </data>
+  <data name="Android_MainPage_Jobs_ContentPage_Title" xml:space="preserve">
+    <value>ALL</value>
+  </data>
+  <data name="Android_MainPage_Profile_ContentPage_Title" xml:space="preserve">
+    <value>PROFILE</value>
+  </data>
+  <data name="iOS_ItemDetailPage_Information_ContentPage_Title" xml:space="preserve">
+    <value>Information</value>
+  </data>
+  <data name="iOS_ItemDetailPage_Map_ContentPage_Title" xml:space="preserve">
+    <value>Map</value>
+  </data>
+  <data name="iOS_MainPage_Jobs_ContentPage_Title" xml:space="preserve">
+    <value>All</value>
+  </data>
+  <data name="iOS_MainPage_Profile_ContentPage_Title" xml:space="preserve">
+    <value>Profile</value>
+  </data>
+  <data name="ItemDetailPage_Delete_ToolBarItem_Text" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="ItemDetailPage_Distance_Kilometers_Text" xml:space="preserve">
+    <value>You are about {0:N2}km. from:</value>
+  </data>
+  <data name="ItemDetailPage_Distance_Meters_Text" xml:space="preserve">
+    <value>You are about {0:N2}m. from:</value>
+  </data>
+  <data name="ItemDetailPage_Page_Title" xml:space="preserve">
+    <value>Job detail</value>
+  </data>
+  <data name="Job_PostedDate_Text" xml:space="preserve">
+    <value>Posted on {0:dd MMMM yyyy} ({1} ago)</value>
+  </data>
+  <data name="LoginPage_Email_Label_Text" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="LoginPage_Login_Button_Text" xml:space="preserve">
+    <value>Log in</value>
+  </data>
+  <data name="LoginPage_Password_Label_Text" xml:space="preserve">
+    <value>Password</value>
+  </data>
+  <data name="LoginPage_Register_Button_Text" xml:space="preserve">
+    <value>Register</value>
+  </data>
+  <data name="LoginPage_Register_Label_Text" xml:space="preserve">
+    <value>Don't have an account?</value>
+  </data>
+  <data name="MainPage_Add_ToolBarItem_Text" xml:space="preserve">
+    <value>Add</value>
+  </data>
+  <data name="MainPage_Logout_Button_Text" xml:space="preserve">
+    <value>Logout</value>
+  </data>
+  <data name="MainPage_Refresh_ToolBarItem_Text" xml:space="preserve">
+    <value>Refresh</value>
+  </data>
+  <data name="RegisterPage_ConfirmPassword_Label_Text" xml:space="preserve">
+    <value>Confirm password</value>
+  </data>
+  <data name="RegisterPage_Email_Label_Text" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="RegisterPage_FullName_Label_Text" xml:space="preserve">
+    <value>Full name</value>
+  </data>
+  <data name="RegisterPage_Page_Title" xml:space="preserve">
+    <value>Register</value>
+  </data>
+  <data name="RegisterPage_Password_Label_Text" xml:space="preserve">
+    <value>Password</value>
+  </data>
+  <data name="RegisterPage_Register_ToolBarItem_Text" xml:space="preserve">
+    <value>Register</value>
+  </data>
+  <data name="Windows_ItemDetailPage_Information_ContentPage_Title" xml:space="preserve">
+    <value>Information</value>
+  </data>
+  <data name="Windows_ItemDetailPage_Map_ContentPage_Title" xml:space="preserve">
+    <value>Map</value>
+  </data>
+  <data name="Windows_MainPage_Jobs_ContentPage_Title" xml:space="preserve">
+    <value>All</value>
+  </data>
+  <data name="Windows_MainPage_Profile_ContentPage_Title" xml:space="preserve">
+    <value>Profile</value>
+  </data>
+  <data name="Enum_CategoryType_AdministrationSecretariat" xml:space="preserve">
+    <value>Administration &amp; Secretariat</value>
+  </data>
+  <data name="Enum_CategoryType_ArtDesign" xml:space="preserve">
+    <value>Art &amp; Design</value>
+  </data>
+  <data name="Enum_CategoryType_BankingFinanceInsurance" xml:space="preserve">
+    <value>Banking, Finance &amp; Insurance</value>
+  </data>
+  <data name="Enum_CategoryType_BusinessManagement" xml:space="preserve">
+    <value>Business Management</value>
+  </data>
+  <data name="Enum_CategoryType_ConstructionRealState" xml:space="preserve">
+    <value>Construction &amp; Real state</value>
+  </data>
+  <data name="Enum_CategoryType_EducationTrainingResearch" xml:space="preserve">
+    <value>Education, Formation &amp; Investigation</value>
+  </data>
+  <data name="Enum_CategoryType_EngineeringProduction" xml:space="preserve">
+    <value>Engineering &amp; Production</value>
+  </data>
+  <data name="Enum_CategoryType_HealthSocialServices" xml:space="preserve">
+    <value>Health &amp; Social Services</value>
+  </data>
+  <data name="Enum_CategoryType_HomeServices" xml:space="preserve">
+    <value>Home services</value>
+  </data>
+  <data name="Enum_CategoryType_HostelTourism" xml:space="preserve">
+    <value>Hostel &amp; Tourism</value>
+  </data>
+  <data name="Enum_CategoryType_HumanResources" xml:space="preserve">
+    <value>Human Resources</value>
+  </data>
+  <data name="Enum_CategoryType_Legal" xml:space="preserve">
+    <value>Legal</value>
+  </data>
+  <data name="Enum_CategoryType_LogisticsTransportation" xml:space="preserve">
+    <value>Logistics &amp; Transport</value>
+  </data>
+  <data name="Enum_CategoryType_MarketingCommunication" xml:space="preserve">
+    <value>Marketing &amp; Comunication</value>
+  </data>
+  <data name="Enum_CategoryType_Others" xml:space="preserve">
+    <value>Others</value>
+  </data>
+  <data name="Enum_CategoryType_ProfessionalCrafts" xml:space="preserve">
+    <value>Professional crafts</value>
+  </data>
+  <data name="Enum_CategoryType_QualityID" xml:space="preserve">
+    <value>Quality &amp; I+D</value>
+  </data>
+  <data name="Enum_CategoryType_TechnologyInformatics" xml:space="preserve">
+    <value>Tecnology &amp; Informatics</value>
+  </data>
+  <data name="Enum_CategoryType_TradeSales" xml:space="preserve">
+    <value>Trade &amp; Sales</value>
+  </data>
+  <data name="Enum_ContractType_FixedDiscontinuous" xml:space="preserve">
+    <value>Fixed discontinuous</value>
+  </data>
+  <data name="Enum_ContractType_FixedTerm" xml:space="preserve">
+    <value>Fixed term</value>
+  </data>
+  <data name="Enum_ContractType_Formative" xml:space="preserve">
+    <value>Formative</value>
+  </data>
+  <data name="Enum_ContractType_Freelance" xml:space="preserve">
+    <value>Freelance</value>
+  </data>
+  <data name="Enum_ContractType_Indefinite" xml:space="preserve">
+    <value>Indefinite</value>
+  </data>
+  <data name="Enum_ContractType_Other" xml:space="preserve">
+    <value>Other</value>
+  </data>
+  <data name="Enum_ContractType_PartTime" xml:space="preserve">
+    <value>Part time</value>
+  </data>
+  <data name="Enum_ContractType_Relief" xml:space="preserve">
+    <value>Relief</value>
+  </data>
+  <data name="Enum_DateTimeDiffFormatType_Day" xml:space="preserve">
+    <value>day</value>
+  </data>
+  <data name="Enum_DateTimeDiffFormatType_Days" xml:space="preserve">
+    <value>days</value>
+  </data>
+  <data name="Enum_DateTimeDiffFormatType_Hour" xml:space="preserve">
+    <value>hour</value>
+  </data>
+  <data name="Enum_DateTimeDiffFormatType_Hours" xml:space="preserve">
+    <value>hours</value>
+  </data>
+  <data name="Enum_DateTimeDiffFormatType_Minute" xml:space="preserve">
+    <value>minute</value>
+  </data>
+  <data name="Enum_DateTimeDiffFormatType_Minutes" xml:space="preserve">
+    <value>minutes</value>
+  </data>
+  <data name="Enum_DateTimeDiffFormatType_Month" xml:space="preserve">
+    <value>month</value>
+  </data>
+  <data name="Enum_DateTimeDiffFormatType_Months" xml:space="preserve">
+    <value>months</value>
+  </data>
+  <data name="Enum_DateTimeDiffFormatType_Second" xml:space="preserve">
+    <value>second</value>
+  </data>
+  <data name="Enum_DateTimeDiffFormatType_Seconds" xml:space="preserve">
+    <value>seconds</value>
+  </data>
+  <data name="Enum_DateTimeDiffFormatType_Year" xml:space="preserve">
+    <value>year</value>
+  </data>
+  <data name="Enum_DateTimeDiffFormatType_Years" xml:space="preserve">
+    <value>years</value>
+  </data>
+  <data name="Enum_WorkdayType_FullTime" xml:space="preserve">
+    <value>Full time</value>
+  </data>
+  <data name="Enum_WorkdayType_Indifferent" xml:space="preserve">
+    <value>Indifferent</value>
+  </data>
+  <data name="Enum_WorkdayType_IntensiveAfternoon" xml:space="preserve">
+    <value>Intensive - Afternoon</value>
+  </data>
+  <data name="Enum_WorkdayType_IntensiveIndifferent" xml:space="preserve">
+    <value>Intensive - Indifferent</value>
+  </data>
+  <data name="Enum_WorkdayType_IntensiveMorning" xml:space="preserve">
+    <value>Intensive - Morning</value>
+  </data>
+  <data name="Enum_WorkdayType_IntensiveNight" xml:space="preserve">
+    <value>Intensive - Night</value>
+  </data>
+  <data name="Enum_WorkdayType_Other" xml:space="preserve">
+    <value>Other</value>
+  </data>
+  <data name="Enum_WorkdayType_PartialAfternoon" xml:space="preserve">
+    <value>Partial - Afternoon</value>
+  </data>
+  <data name="Enum_WorkdayType_PartialIndifferent" xml:space="preserve">
+    <value>Partial - Infifferent</value>
+  </data>
+  <data name="Enum_WorkdayType_PartialMorning" xml:space="preserve">
+    <value>Partial - Morning</value>
+  </data>
+  <data name="Enum_WorkdayType_PartialNight" xml:space="preserve">
+    <value>Partial - Night</value>
+  </data>
+  <data name="MainPage_DateOrder_ToolBarItem_Text" xml:space="preserve">
+    <value>Order - Date</value>
+  </data>
+  <data name="MainPage_DistanceOrder_ToolBarItem_Text" xml:space="preserve">
+    <value>Order - Distance</value>
+  </data>
+  <data name="MainPage_NameOrder_ToolBarItem_Text" xml:space="preserve">
+    <value>Order - Name</value>
+  </data>
+  <data name="MainPage_MyJobsList_NoItems_Label_Text" xml:space="preserve">
+    <value>You have not yet created any jobs, try to create a new one.</value>
+  </data>
+  <data name="AddItemPage_AddressError_Exception_Message" xml:space="preserve">
+    <value>Can't obtain valid addresses.</value>
+  </data>
+  <data name="AddItemPage_InvalidAdress_Exception_Message" xml:space="preserve">
+    <value>Address not valid. Please try another address.</value>
+  </data>
+  <data name="AddItemPage_InvalidImage_Exception_Message" xml:space="preserve">
+    <value>Image file is invalid. Try with .png or .jpg image.</value>
+  </data>
+  <data name="AddItemPage_LocationError_Exception_Message" xml:space="preserve">
+    <value>Unable to get location. Check your configuration and try again later.</value>
+  </data>
+  <data name="AddItemPage_NoDescription_Exception_Message" xml:space="preserve">
+    <value>You need to add a description.</value>
+  </data>
+  <data name="AddItemPage_NoLocation_Exception_Message" xml:space="preserve">
+    <value>You need to add a location.</value>
+  </data>
+  <data name="AddItemPage_NoTitle_Exception_Message" xml:space="preserve">
+    <value>You need to add a title.</value>
+  </data>
+  <data name="AddItemPage_RemoveImage_Confirmation_Message" xml:space="preserve">
+    <value>Do you want to remove the photo?</value>
+  </data>
+  <data name="Exception_General_Message" xml:space="preserve">
+    <value>Something goes wrong. Try again later.</value>
+  </data>
+  <data name="ItemDetailPage_LocationError_Exception_Message" xml:space="preserve">
+    <value>Unable to get location. Check your configuration and try again later.</value>
+  </data>
+  <data name="ItemDetailPage_RemoveJob_Confirmation_Message" xml:space="preserve">
+    <value>Are you sure you want to delete this job?</value>
+  </data>
+  <data name="RegisterPage_Welcome_Message" xml:space="preserve">
+    <value>Hi {0}, welcome to JobInTown.</value>
+  </data>
+</root>

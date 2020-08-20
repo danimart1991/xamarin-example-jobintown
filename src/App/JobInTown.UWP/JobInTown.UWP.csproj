@@ -1,0 +1,217 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProjectGuid>{BADCC349-E3CD-4F89-BD94-D3E92C5D1CCC}</ProjectGuid>
+    <OutputType>AppContainerExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>JobInTown.UWP</RootNamespace>
+    <AssemblyName>JobInTown.UWP</AssemblyName>
+    <DefaultLanguage>en-US</DefaultLanguage>
+    <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
+    <TargetPlatformVersion>10.0.15063.0</TargetPlatformVersion>
+    <TargetPlatformMinVersion>10.0.10586.0</TargetPlatformMinVersion>
+    <MinimumVisualStudioVersion>14</MinimumVisualStudioVersion>
+    <EnableDotNetNativeCompatibleProfile>true</EnableDotNetNativeCompatibleProfile>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{A5A43C5B-DE2A-4C0C-9213-0A381AF9435A};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <PackageCertificateKeyFile>JobInTown.UWP_TemporaryKey.pfx</PackageCertificateKeyFile>
+    <PackageCertificateThumbprint>5D355FF596FFA70F857290E0AE121E24180E367B</PackageCertificateThumbprint>
+    <AppxAutoIncrementPackageRevision>False</AppxAutoIncrementPackageRevision>
+    <AppxSymbolPackageEnabled>True</AppxSymbolPackageEnabled>
+    <AppxBundle>Always</AppxBundle>
+    <AppxBundlePlatforms>x86|x64|arm</AppxBundlePlatforms>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|ARM'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>$(SolutionDir)bin\App\JobInTown\ARM\Debug\</OutputPath>
+    <BaseIntermediateOutputPath>$(SolutionDir)obj\App\JobInTown\ARM\</BaseIntermediateOutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>ARM</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+    <CodeAnalysisRuleSet>$(SolutionDir)Solution.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|ARM'">
+    <OutputPath>$(SolutionDir)bin\App\JobInTown\ARM\Release\</OutputPath>
+    <BaseIntermediateOutputPath>$(SolutionDir)obj\App\JobInTown\</BaseIntermediateOutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>ARM</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+    <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+    <CodeAnalysisRuleSet>$(SolutionDir)Solution.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>$(SolutionDir)bin\App\JobInTown\x64\Debug\</OutputPath>
+    <BaseIntermediateOutputPath>$(SolutionDir)obj\App\JobInTown\</BaseIntermediateOutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+    <CodeAnalysisRuleSet>$(SolutionDir)Solution.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>$(SolutionDir)bin\App\JobInTown\x64\Release\</OutputPath>
+    <BaseIntermediateOutputPath>$(SolutionDir)obj\App\JobInTown\</BaseIntermediateOutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+    <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+    <CodeAnalysisRuleSet>$(SolutionDir)Solution.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>$(SolutionDir)bin\App\JobInTown\x86\Debug\</OutputPath>
+    <BaseIntermediateOutputPath>$(SolutionDir)obj\App\JobInTown\</BaseIntermediateOutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+    <CodeAnalysisRuleSet>$(SolutionDir)Solution.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>$(SolutionDir)bin\App\JobInTown\x86\Release\</OutputPath>
+    <BaseIntermediateOutputPath>$(SolutionDir)obj\App\JobInTown\</BaseIntermediateOutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+    <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+    <CodeAnalysisRuleSet>$(SolutionDir)Solution.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <!-- A reference to the entire .Net Framework and Windows SDK are automatically included -->
+    <AdditionalFiles Include="..\..\..\stylecop.json">
+      <Link>stylecop.json</Link>
+    </AdditionalFiles>
+    <None Include="project.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MainPage.xaml.cs">
+      <DependentUpon>MainPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\LocalizationService.cs" />
+    <Compile Include="Setup.cs" />
+    <Compile Include="Views\CustomTableViewRenderer.cs" />
+    <Compile Include="Views\RoundedBoxRenderer.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <AppxManifest Include="Package.appxmanifest">
+      <SubType>Designer</SubType>
+    </AppxManifest>
+    <None Include="JobInTown.UWP_TemporaryKey.pfx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assets\Icons\AddIcon.png" />
+    <Content Include="Assets\Icons\AutoRenewIcon.png" />
+    <Content Include="Assets\Icons\DeleteIcon.png" />
+    <Content Include="Assets\Icons\OrderDateIcon.png" />
+    <Content Include="Assets\Icons\OrderDistanceIcon.png" />
+    <Content Include="Assets\Icons\OrderNameIcon.png" />
+    <Content Include="Assets\Icons\SaveIcon.png" />
+    <Content Include="Assets\ImagePlaceholder.png" />
+    <Content Include="Assets\Logo.png" />
+    <Content Include="Assets\Tiles\StoreLogo.scale-100.png" />
+    <Content Include="Assets\Tiles\StoreLogo.scale-125.png" />
+    <Content Include="Assets\Tiles\StoreLogo.scale-150.png" />
+    <Content Include="Assets\Tiles\StoreLogo.scale-200.png" />
+    <Content Include="Assets\Tiles\StoreLogo.scale-400.png" />
+    <Content Include="Assets\UserPlaceholder.png" />
+    <Content Include="Properties\Default.rd.xml" />
+    <Content Include="Assets\Tiles\LockScreenLogo.scale-100.png" />
+    <Content Include="Assets\Tiles\LockScreenLogo.scale-125.png" />
+    <Content Include="Assets\Tiles\LockScreenLogo.scale-150.png" />
+    <Content Include="Assets\Tiles\LockScreenLogo.scale-200.png" />
+    <Content Include="Assets\Tiles\LockScreenLogo.scale-400.png" />
+    <Content Include="Assets\Tiles\SplashScreen.scale-100.png" />
+    <Content Include="Assets\Tiles\SplashScreen.scale-125.png" />
+    <Content Include="Assets\Tiles\SplashScreen.scale-150.png" />
+    <Content Include="Assets\Tiles\SplashScreen.scale-200.png" />
+    <Content Include="Assets\Tiles\SplashScreen.scale-400.png" />
+    <Content Include="Assets\Tiles\Square150x150Logo.scale-100.png" />
+    <Content Include="Assets\Tiles\Square150x150Logo.scale-125.png" />
+    <Content Include="Assets\Tiles\Square150x150Logo.scale-150.png" />
+    <Content Include="Assets\Tiles\Square150x150Logo.scale-200.png" />
+    <Content Include="Assets\Tiles\Square150x150Logo.scale-400.png" />
+    <Content Include="Assets\Tiles\Square44x44Logo.scale-100.png" />
+    <Content Include="Assets\Tiles\Square44x44Logo.scale-125.png" />
+    <Content Include="Assets\Tiles\Square44x44Logo.scale-150.png" />
+    <Content Include="Assets\Tiles\Square44x44Logo.scale-200.png" />
+    <Content Include="Assets\Tiles\Square44x44Logo.scale-400.png" />
+    <Content Include="Assets\Tiles\Square44x44Logo.targetsize-16_altform-unplated.png" />
+    <Content Include="Assets\Tiles\Square44x44Logo.targetsize-24_altform-unplated.png" />
+    <Content Include="Assets\Tiles\Square44x44Logo.targetsize-32_altform-unplated.png" />
+    <Content Include="Assets\Tiles\Square44x44Logo.targetsize-48_altform-unplated.png" />
+    <Content Include="Assets\Tiles\Square44x44Logo.targetsize-256_altform-unplated.png" />
+    <Content Include="Assets\Tiles\Wide310x150Logo.scale-100.png" />
+    <Content Include="Assets\Tiles\Wide310x150Logo.scale-125.png" />
+    <Content Include="Assets\Tiles\Wide310x150Logo.scale-150.png" />
+    <Content Include="Assets\Tiles\Wide310x150Logo.scale-200.png" />
+    <Content Include="Assets\Tiles\Wide310x150Logo.scale-400.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Page Include="MainPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Common\Models\Models.csproj">
+      <Project>{bd5e9ac5-09ee-463a-bf91-9819e476af3c}</Project>
+      <Name>Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Services\LocalizationService\Localization.Contracts\Localization.Contracts.csproj">
+      <Project>{BD3C73FE-FC56-41F8-A676-221CB114C032}</Project>
+      <Name>Localization.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Services\LocalizationService\Localization.Models\Localization.Models.csproj">
+      <Project>{a24a1e72-0302-43e8-a527-ef43aa8593f3}</Project>
+      <Name>Localization.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\JobInTown\JobInTown.csproj">
+      <Project>{8dba50c1-9d86-4337-9c97-b8c99bdbc972}</Project>
+      <Name>JobInTown</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
+    <VisualStudioVersion>14.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\WindowsXaml\v$(VisualStudioVersion)\Microsoft.Windows.UI.Xaml.CSharp.targets" />
+</Project>

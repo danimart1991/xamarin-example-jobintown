@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<base:ContentPageBase
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:base="clr-namespace:JobInTown.Pages.Base"
+    xmlns:viewModels="clr-namespace:JobInTown.ViewModels"
+    xmlns:localization="clr-namespace:JobInTown.Extensions"
+    x:TypeArguments="viewModels:LoginViewModel"
+    xmlns:controls="clr-namespace:JobInTown.Controls"
+    x:Class="JobInTown.Pages.LoginPage">
+
+  <base:ContentPageBase.Content>
+    <StackLayout>
+      <Grid BackgroundColor="#DD9944" HeightRequest="97">
+        <Image HorizontalOptions="Center" Aspect="AspectFit">
+          <Image.Source>
+            <OnPlatform x:TypeArguments="ImageSource">
+              <OnPlatform.iOS>
+                <FileImageSource File="Logo.png"/>
+              </OnPlatform.iOS>
+              <OnPlatform.Android>
+                <FileImageSource File="Logo.png"/>
+              </OnPlatform.Android>
+              <OnPlatform.WinPhone>
+                <FileImageSource File="Assets/Logo.png"/>
+              </OnPlatform.WinPhone>
+            </OnPlatform>
+          </Image.Source>
+        </Image>
+      </Grid>
+
+      <Grid>
+        <ScrollView>
+          <Grid>
+            <Grid.RowDefinitions>
+              <RowDefinition Height="*"/>
+              <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <StackLayout HorizontalOptions="Center" WidthRequest="720" Margin="36,8,36,0">
+              <Label Text="{localization:Translate LoginPage_Email_Label_Text}">
+                <Label.TextColor>
+                  <OnPlatform x:TypeArguments="Color" iOS="Black" Android="DarkGray" WinPhone="Black" />
+                </Label.TextColor>
+                <Label.Margin>
+                  <OnPlatform x:TypeArguments="Thickness" iOS="0" Android="4,0,0,0" WinPhone="0" />
+                </Label.Margin>
+              </Label>
+              <Entry Text="{Binding Email, Mode=TwoWay}" Completed="OnEntryCompleted"/>
+              <Label Text="{localization:Translate LoginPage_Password_Label_Text}">
+                <Label.TextColor>
+                  <OnPlatform x:TypeArguments="Color" iOS="Black" Android="DarkGray" WinPhone="Black" />
+                </Label.TextColor>
+                <Label.Margin>
+                  <OnPlatform x:TypeArguments="Thickness" iOS="0" Android="4,0,0,0" WinPhone="0" />
+                </Label.Margin>
+              </Label>
+              <Entry Text="{Binding Password, Mode=TwoWay}" IsPassword="True" Completed="OnEntryCompleted"/>
+              <Button Text="{localization:Translate LoginPage_Login_Button_Text}" Command="{Binding LogInCommand}" Margin="0,12,0,0"/>
+            </StackLayout>
+
+            <StackLayout Grid.Row="1" Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="End" Margin="0,0,0,12">
+              <Label Text="{localization:Translate LoginPage_Register_Label_Text}"/>
+              <controls:HyperLinkLabel Text="{localization:Translate LoginPage_Register_Button_Text}" NavigateCommand="{Binding RegisterCommand}" TextColor="#DD9944"/>
+            </StackLayout>
+          </Grid>
+        </ScrollView>
+        
+        <Grid IsVisible="{Binding IsBusy}" BackgroundColor="#CCFFFFFF">
+          <ActivityIndicator IsRunning="True" Color="#DD9944" HeightRequest="200" VerticalOptions="Center"/>
+        </Grid>
+      </Grid>
+    </StackLayout>
+  </base:ContentPageBase.Content>
+</base:ContentPageBase>

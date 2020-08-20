@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<base:ContentPageBase
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:JobInTown"
+    xmlns:base="clr-namespace:JobInTown.Pages.Base"
+    xmlns:localization="clr-namespace:JobInTown.Extensions"
+    xmlns:viewModels="clr-namespace:JobInTown.ViewModels"
+    x:TypeArguments="viewModels:RegisterViewModel"
+    x:Class="JobInTown.Pages.RegisterPage"
+    Title="{localization:Translate RegisterPage_Page_Title}"
+    BackgroundColor="White">
+
+  <base:ContentPageBase.ToolbarItems>
+    <ToolbarItem Text="{localization:Translate RegisterPage_Register_ToolBarItem_Text}" Command="{Binding RegisterCommand}">
+      <ToolbarItem.Icon>
+        <OnPlatform x:TypeArguments="FileImageSource" iOS="Icons/SaveIcon.png" Android="ic_done_white_24dp.png" WinPhone="Assets/Icons/SaveIcon.png" />
+      </ToolbarItem.Icon>
+    </ToolbarItem>
+  </base:ContentPageBase.ToolbarItems>
+
+  <base:ContentPageBase.Content>
+    <Grid>
+      <ScrollView>
+        <Grid>
+          <StackLayout HorizontalOptions="Center" WidthRequest="720" Margin="36,36,36,48">
+            <Label Text="{localization:Translate RegisterPage_FullName_Label_Text}">
+              <Label.TextColor>
+                <OnPlatform x:TypeArguments="Color" iOS="Black" Android="DarkGray" WinPhone="Black" />
+              </Label.TextColor>
+              <Label.Margin>
+                <OnPlatform x:TypeArguments="Thickness" iOS="0" Android="4,0,0,0" WinPhone="0" />
+              </Label.Margin>
+            </Label>
+            <Entry Text="{Binding FullName, Mode=TwoWay}" Completed="OnEntryCompleted"/>
+
+            <Label Text="{localization:Translate RegisterPage_Email_Label_Text}">
+              <Label.TextColor>
+                <OnPlatform x:TypeArguments="Color" iOS="Black" Android="DarkGray" WinPhone="Black" />
+              </Label.TextColor>
+              <Label.Margin>
+                <OnPlatform x:TypeArguments="Thickness" iOS="0" Android="4,0,0,0" WinPhone="0" />
+              </Label.Margin>
+            </Label>
+            <Entry Text="{Binding Email, Mode=TwoWay}" Completed="OnEntryCompleted"/>
+
+            <Label Text="{localization:Translate RegisterPage_Password_Label_Text}">
+              <Label.TextColor>
+                <OnPlatform x:TypeArguments="Color" iOS="Black" Android="DarkGray" WinPhone="Black" />
+              </Label.TextColor>
+              <Label.Margin>
+                <OnPlatform x:TypeArguments="Thickness" iOS="0" Android="4,0,0,0" WinPhone="0" />
+              </Label.Margin>
+            </Label>
+            <Entry Text="{Binding Password, Mode=TwoWay}" IsPassword="True" Completed="OnEntryCompleted"/>
+
+            <Label Text="{localization:Translate RegisterPage_ConfirmPassword_Label_Text}">
+              <Label.TextColor>
+                <OnPlatform x:TypeArguments="Color" iOS="Black" Android="DarkGray" WinPhone="Black" />
+              </Label.TextColor>
+              <Label.Margin>
+                <OnPlatform x:TypeArguments="Thickness" iOS="0" Android="4,0,0,0" WinPhone="0" />
+              </Label.Margin>
+            </Label>
+            <Entry Text="{Binding ConfirmPassword, Mode=TwoWay}" IsPassword="True" Completed="OnEntryCompleted"/>
+          </StackLayout>
+        </Grid>
+      </ScrollView>
+      
+      <Grid IsVisible="{Binding IsBusy}" BackgroundColor="#CCFFFFFF">
+        <ActivityIndicator IsRunning="True" Color="#DD9944" HeightRequest="200" VerticalOptions="Center"/>
+      </Grid>
+    </Grid>
+  </base:ContentPageBase.Content>
+</base:ContentPageBase>

@@ -1,0 +1,145 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<base:ContentPageBase
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:JobInTown"
+    xmlns:base="clr-namespace:JobInTown.Pages.Base"
+    xmlns:viewModels="clr-namespace:JobInTown.ViewModels"
+    xmlns:layouts="clr-namespace:JobInTown.Layouts"
+    xmlns:views="clr-namespace:JobInTown.Views"
+    xmlns:cells="clr-namespace:JobInTown.Cells"
+    xmlns:localization="clr-namespace:JobInTown.Extensions"
+    xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+    xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
+    x:TypeArguments="viewModels:AddItemViewModel"
+    x:Class="JobInTown.Pages.AddItemPage"
+    Title="{localization:Translate AddItemPage_Page_Title}"
+    BackgroundColor="White">
+
+  <base:ContentPageBase.ToolbarItems>
+    <ToolbarItem Text="{localization:Translate AddItemPage_Save_ToolBarItem_Text}" Command="{Binding AddItemCommand}" >
+      <ToolbarItem.Icon>
+        <OnPlatform x:TypeArguments="FileImageSource" iOS="Icons/AddIcon.png" Android="ic_done_white_24dp.png" WinPhone="Assets/Icons/SaveIcon.png" />
+      </ToolbarItem.Icon>
+    </ToolbarItem>
+  </base:ContentPageBase.ToolbarItems>
+
+  <base:ContentPageBase.Content>
+    <Grid>
+      <ScrollView>
+        <AbsoluteLayout>
+          <StackLayout AbsoluteLayout.LayoutBounds=".5,0,1,1" AbsoluteLayout.LayoutFlags="All">
+            <Grid HeightRequest="200">
+              <Image HorizontalOptions="Center">
+                <Image.Source>
+                  <OnPlatform x:TypeArguments="ImageSource">
+                    <OnPlatform.iOS>
+                      <FileImageSource File="ImagePlaceholder.png"/>
+                    </OnPlatform.iOS>
+                    <OnPlatform.Android>
+                      <FileImageSource File="ImagePlaceholder.png"/>
+                    </OnPlatform.Android>
+                    <OnPlatform.WinPhone>
+                      <FileImageSource File="Assets/ImagePlaceholder.png"/>
+                    </OnPlatform.WinPhone>
+                  </OnPlatform>
+                </Image.Source>
+              </Image>
+              <ffimageloading:CachedImage HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
+                                          RetryCount="3" RetryDelay="250" Aspect="Fill" HeightRequest="200"
+                                          Source="{Binding Image}">
+                <ffimageloading:CachedImage.Transformations>
+                  <fftransformations:BlurredTransformation Radius="40"/>
+                </ffimageloading:CachedImage.Transformations>
+              </ffimageloading:CachedImage>
+              <ffimageloading:CachedImage
+                  RetryCount="3" RetryDelay="250" FadeAnimationEnabled="true"
+                  Source="{Binding Image}"/>
+              <Button
+                VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Opacity="0"
+                Command="{Binding ImageChangeCommand}"/>
+            </Grid>
+
+            <StackLayout Margin="16" HorizontalOptions="Center" WidthRequest="720">
+              <Label Text="{localization:Translate AddItemPage_Title_Label_Text}">
+                <Label.TextColor>
+                  <OnPlatform x:TypeArguments="Color" iOS="Black" Android="DarkGray" WinPhone="Black" />
+                </Label.TextColor>
+                <Label.Margin>
+                  <OnPlatform x:TypeArguments="Thickness" iOS="0" Android="4,0,0,0" WinPhone="0" />
+                </Label.Margin>
+              </Label>
+              <Entry Text="{Binding Title, Mode=TwoWay}"/>
+
+              <Label Text="{localization:Translate AddItemPage_Category_Label_Text}">
+                <Label.TextColor>
+                  <OnPlatform x:TypeArguments="Color" iOS="Black" Android="DarkGray" WinPhone="Black" />
+                </Label.TextColor>
+                <Label.Margin>
+                  <OnPlatform x:TypeArguments="Thickness" iOS="0" Android="4,0,0,0" WinPhone="0" />
+                </Label.Margin>
+                <Label.IsVisible>
+                  <OnPlatform x:TypeArguments="x:Boolean" iOS="True" Android="True" WinPhone="False" />
+                </Label.IsVisible>
+              </Label>
+              <Picker HorizontalOptions="FillAndExpand" Title="{localization:Translate AddItemPage_Category_Label_Text}" ItemsSource="{Binding Categories}" SelectedItem="{Binding SelectedCategory, Mode=TwoWay}" ItemDisplayBinding="{Binding Converter={StaticResource EnumToDisplayNameAttribute}}"/>
+
+              <Label Text="{localization:Translate AddItemPage_Workday_Label_Text}">
+                <Label.TextColor>
+                  <OnPlatform x:TypeArguments="Color" iOS="Black" Android="DarkGray" WinPhone="Black" />
+                </Label.TextColor>
+                <Label.Margin>
+                  <OnPlatform x:TypeArguments="Thickness" iOS="0" Android="4,0,0,0" WinPhone="0" />
+                </Label.Margin>
+                <Label.IsVisible>
+                  <OnPlatform x:TypeArguments="x:Boolean" iOS="True" Android="True" WinPhone="False" />
+                </Label.IsVisible>
+              </Label>
+              <Picker HorizontalOptions="FillAndExpand" Title="{localization:Translate AddItemPage_Workday_Label_Text}" ItemsSource="{Binding Workdays}" SelectedItem="{Binding SelectedWorkday, Mode=TwoWay}" ItemDisplayBinding="{Binding Converter={StaticResource EnumToDisplayNameAttribute}}"/>
+
+              <Label Text="{localization:Translate AddItemPage_Contract_Label_Text}">
+                <Label.TextColor>
+                  <OnPlatform x:TypeArguments="Color" iOS="Black" Android="DarkGray" WinPhone="Black" />
+                </Label.TextColor>
+                <Label.Margin>
+                  <OnPlatform x:TypeArguments="Thickness" iOS="0" Android="4,0,0,0" WinPhone="0" />
+                </Label.Margin>
+                <Label.IsVisible>
+                  <OnPlatform x:TypeArguments="x:Boolean" iOS="True" Android="True" WinPhone="False" />
+                </Label.IsVisible>
+              </Label>
+              <Picker HorizontalOptions="FillAndExpand" Title="{localization:Translate AddItemPage_Contract_Label_Text}" ItemsSource="{Binding Contracts}" SelectedItem="{Binding SelectedContract, Mode=TwoWay}" ItemDisplayBinding="{Binding Converter={StaticResource EnumToDisplayNameAttribute}}"/>
+
+              <Label Text="{localization:Translate AddItemPage_Description_Label_Text}">
+                <Label.TextColor>
+                  <OnPlatform x:TypeArguments="Color" iOS="Black" Android="DarkGray" WinPhone="Black" />
+                </Label.TextColor>
+                <Label.Margin>
+                  <OnPlatform x:TypeArguments="Thickness" iOS="0" Android="4,0,0,0" WinPhone="0" />
+                </Label.Margin>
+              </Label>
+              <Editor Text="{Binding Description, Mode=TwoWay}" TextColor="Black" HeightRequest="100"/>
+
+              <Label Text="{localization:Translate AddItemPage_Location_Label_Text}">
+                <Label.TextColor>
+                  <OnPlatform x:TypeArguments="Color" iOS="Black" Android="DarkGray" WinPhone="Black" />
+                </Label.TextColor>
+                <Label.Margin>
+                  <OnPlatform x:TypeArguments="Thickness" iOS="0" Android="4,0,0,0" WinPhone="0" />
+                </Label.Margin>
+              </Label>
+              <StackLayout Orientation="Horizontal">
+                <Entry Text="{Binding Location, Mode=TwoWay}" HorizontalOptions="FillAndExpand" />
+                <Button Text="🔘" Command="{Binding GetCurrentLocationCommand}" HorizontalOptions="End"/>
+              </StackLayout>
+            </StackLayout>
+          </StackLayout>
+        </AbsoluteLayout>
+      </ScrollView>
+
+      <Grid IsVisible="{Binding IsBusy}" BackgroundColor="#CCFFFFFF">
+        <ActivityIndicator IsRunning="True" Color="#DD9944" HeightRequest="200" VerticalOptions="Center"/>
+      </Grid>
+    </Grid>
+  </base:ContentPageBase.Content>
+</base:ContentPageBase>

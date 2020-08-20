@@ -1,0 +1,148 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<base:TabbedPageBase
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:JobInTown"
+    xmlns:base="clr-namespace:JobInTown.Pages.Base"
+    xmlns:viewModels="clr-namespace:JobInTown.ViewModels"
+    xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+    xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
+    xmlns:localization="clr-namespace:JobInTown.Extensions"
+    xmlns:views="clr-namespace:JobInTown.Views"
+    x:TypeArguments="viewModels:MainViewModel"
+    x:Class="JobInTown.Pages.MainPage"
+    Title="JobInTown"
+    BarBackgroundColor="#DD9944"
+    BarTextColor="White">
+
+  <base:TabbedPageBase.Resources>
+    <ResourceDictionary>
+      <DataTemplate x:Key="MainPageListViewDataTemplate">
+        <ViewCell>
+          <StackLayout Margin="16">
+            <StackLayout Grid.Column="1" Orientation="Horizontal">
+              <views:Badge FontSize="Micro" Text="{Binding Contract, Converter={StaticResource EnumToDisplayNameAttribute}}" BackgroundColor="{Binding Contract, Converter={StaticResource ContractToColor}}" VerticalOptions="Start"/>
+              <views:Badge FontSize="Micro" Text="{Binding Workday, Converter={StaticResource EnumToDisplayNameAttribute}}" BackgroundColor="{Binding Workday, Converter={StaticResource WorkDayToColor}}" VerticalOptions="Start"/>
+            </StackLayout>
+            <Label Text="{Binding Title}"
+                   FontSize="Medium" FontAttributes="Bold"
+                   TextColor="Black" LineBreakMode="TailTruncation">
+            </Label>
+            <Label Text="{Binding Category, Converter={StaticResource EnumToDisplayNameAttribute}}"/>
+
+            <Label Text="{Binding PostedDate, Converter={StaticResource DateToPostedDate}}"/>
+          </StackLayout>
+        </ViewCell>
+      </DataTemplate>
+    </ResourceDictionary>
+  </base:TabbedPageBase.Resources>
+
+  <ContentPage x:Name="JobsPage">
+    <ContentPage.ToolbarItems>
+      <ToolbarItem x:Name="OrderToolbarItem" Text="{localization:Translate MainPage_DateOrder_ToolBarItem_Text}" Clicked="OnOrderToolbarItemClicked">
+        <ToolbarItem.Icon>
+          <OnPlatform x:TypeArguments="FileImageSource" iOS="Icons/OrderDateIcon.png" Android="ic_access_time_white_24dp.png" WinPhone="Assets/Icons/OrderDateIcon.png" />
+        </ToolbarItem.Icon>
+      </ToolbarItem>
+      <ToolbarItem Text="{localization:Translate MainPage_Refresh_ToolBarItem_Text}" Clicked="OnRefreshToolbarItemClicked" >
+        <ToolbarItem.Icon>
+          <OnPlatform x:TypeArguments="FileImageSource" iOS="Icons/AutoRenewIcon.png" Android="ic_autorenew_white_24dp.png" WinPhone="Assets/Icons/AutoRenewIcon.png" />
+        </ToolbarItem.Icon>
+      </ToolbarItem>
+      <ToolbarItem Text="{localization:Translate MainPage_Add_ToolBarItem_Text}" Command="{Binding AddItemCommand}" >
+        <ToolbarItem.Icon>
+          <OnPlatform x:TypeArguments="FileImageSource" iOS="Icons/AddIcon.png" Android="ic_add_white_24dp.png" WinPhone="Assets/Icons/AddIcon.png" />
+        </ToolbarItem.Icon>
+      </ToolbarItem>
+    </ContentPage.ToolbarItems>
+
+    <ContentPage.Title>
+      <OnPlatform x:TypeArguments="x:String"
+                  iOS="{localization:Translate iOS_MainPage_Jobs_ContentPage_Title}"
+                  Android="{localization:Translate Android_MainPage_Jobs_ContentPage_Title}"
+                  WinPhone="{localization:Translate Windows_MainPage_Jobs_ContentPage_Title}"/>
+    </ContentPage.Title>
+
+    <Grid>
+      <ListView
+        ItemsSource="{Binding GalleryItems}" SelectedItem="{Binding SelectedItem, Mode=TwoWay}"
+        SeparatorVisibility="Default" SeparatorColor="LightGray"
+        ItemSelected="OnSelection" ItemTemplate="{StaticResource MainPageListViewDataTemplate}">
+        <ListView.RowHeight>
+          <OnPlatform x:TypeArguments="x:Int32" Android="128"/>
+        </ListView.RowHeight>
+      </ListView>
+      
+      <Grid IsVisible="{Binding IsJobsRefreshing}" BackgroundColor="#CCFFFFFF">
+        <ActivityIndicator IsRunning="True" Color="#DD9944" HeightRequest="200" VerticalOptions="Center"/>
+      </Grid>
+    </Grid>
+  </ContentPage>
+
+  <ContentPage x:Name="ProfilePage">
+    <ContentPage.ToolbarItems>
+      <ToolbarItem Text="{localization:Translate MainPage_Refresh_ToolBarItem_Text}" Clicked="OnRefreshToolbarItemClicked" >
+        <ToolbarItem.Icon>
+          <OnPlatform x:TypeArguments="FileImageSource" iOS="Icons/AutoRenewIcon.png" Android="ic_autorenew_white_24dp.png" WinPhone="Assets/Icons/AutoRenewIcon.png" />
+        </ToolbarItem.Icon>
+      </ToolbarItem>
+      <ToolbarItem Text="{localization:Translate MainPage_Add_ToolBarItem_Text}" Command="{Binding AddItemCommand}" >
+        <ToolbarItem.Icon>
+          <OnPlatform x:TypeArguments="FileImageSource" iOS="Icons/AddIcon.png" Android="ic_add_white_24dp.png" WinPhone="Assets/Icons/AddIcon.png" />
+        </ToolbarItem.Icon>
+      </ToolbarItem>
+    </ContentPage.ToolbarItems>
+
+    <ContentPage.Title>
+      <OnPlatform x:TypeArguments="x:String"
+                  iOS="{localization:Translate iOS_MainPage_Profile_ContentPage_Title}"
+                  Android="{localization:Translate Android_MainPage_Profile_ContentPage_Title}"
+                  WinPhone="{localization:Translate Windows_MainPage_Profile_ContentPage_Title}"/>
+    </ContentPage.Title>
+
+    <Grid>
+      <Label Text="{Binding NoItemsText}" VerticalOptions="Center" HorizontalOptions="Center" LineBreakMode="WordWrap" Margin="0,20,0,0"/>
+      <ListView
+        ItemsSource="{Binding MyJobs}" SelectedItem="{Binding SelectedItem, Mode=TwoWay}"
+        SeparatorVisibility="Default" SeparatorColor="LightGray"
+        ItemSelected="OnSelection" ItemTemplate="{StaticResource MainPageListViewDataTemplate}">
+        <ListView.RowHeight>
+          <OnPlatform x:TypeArguments="x:Int32" Android="128"/>
+        </ListView.RowHeight>
+        <ListView.Header>
+          <Grid>
+            <StackLayout Orientation="Horizontal" Margin="10">
+              <Grid>
+                <ffimageloading:CachedImage VerticalOptions="Center" HeightRequest="80" WidthRequest="80"
+                        RetryCount="3" RetryDelay="250" FadeAnimationEnabled="true" Aspect="AspectFit"
+                                                Source="{Binding UserImageUrl}" DownsampleToViewSize="true">
+                  <ffimageloading:CachedImage.Transformations>
+                    <fftransformations:CircleTransformation BorderSize="4" BorderHexColor="#666666"/>
+                  </ffimageloading:CachedImage.Transformations>
+                </ffimageloading:CachedImage>
+                <Button
+                    Opacity="0"
+                    Command="{Binding ChangePhotoCommand}"
+                    HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
+              </Grid>
+              <StackLayout VerticalOptions="Center" HorizontalOptions="FillAndExpand" Margin="12,0">
+                <Label Text="{Binding UserFullName}"/>
+                <Label Text="{Binding UserEmail}"/>
+                <Button
+                  BorderColor="#DD9944" BorderRadius="4" BorderWidth="1"
+                  Text="{localization:Translate MainPage_Logout_Button_Text}" Command="{Binding LogoutCommand}"
+                  HorizontalOptions="Start"/>
+              </StackLayout>
+            </StackLayout>
+
+            <BoxView HeightRequest="1" BackgroundColor="LightGray" HorizontalOptions="FillAndExpand" VerticalOptions="End"/>
+          </Grid>
+        </ListView.Header>
+      </ListView>
+      
+      <Grid IsVisible="{Binding IsProfileRefreshing}" BackgroundColor="#CCFFFFFF">
+        <ActivityIndicator IsRunning="True" Color="#DD9944" HeightRequest="200" VerticalOptions="Center"/>
+      </Grid>
+    </Grid>
+  </ContentPage>
+</base:TabbedPageBase>
